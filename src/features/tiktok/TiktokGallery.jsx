@@ -46,7 +46,7 @@ const TiktokGallery = () => {
     {
       title: "الفيديو 1: الحكة المستمرة تشير إلى مشاكل في الكبد",
       thumbnail: "/videos/2.png",
-      url: "https://www.tiktok.com/@dr.helmy10/video/7365180517240622369",
+      url: "https://www.tiktok.com/@dr.helmy10/video/7426449707649584417",
     },
     {
       title: "الفيديو 2: اختفاء العقد الدرقية والشفاء التام",
