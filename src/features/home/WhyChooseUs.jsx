@@ -22,13 +22,13 @@ const WhyChooseUs = () => {
 
   const features = [
     { icon: <MdOutlinePrivacyTip />, text: "الخصوصية الطبية" },
-    { icon: <AiOutlineTool />, text: "أحدث المعدات" },
-    { icon: <FaShieldAlt />, text: "الجودة والسلامة" },
+    // { icon: <AiOutlineTool />, text: "أحدث المعدات" },
+    // { icon: <FaShieldAlt />, text: "الجودة والسلامة" },
     { icon: <FaMapMarkerAlt />, text: "الموقع المميز" },
-    { icon: <FaHeartbeat />, text: "رعاية المرضى" },
+    // { icon: <FaHeartbeat />, text: "رعاية المرضى" },
     { icon: <FaUserMd />, text: "طبيب مؤهل" },
     { icon: <FaShieldAlt />, text: "خطة العلاج الشخصية" },
-    { icon: <AiOutlineExclamationCircle />, text: "مساعدة الطوارئ" },
+    // { icon: <AiOutlineExclamationCircle />, text: "مساعدة الطوارئ" },
   ];
 
   return (

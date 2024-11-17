@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import MedicalInfo from "./MedicalInfo";
 
 const services = [
   {
@@ -44,44 +45,48 @@ const MedicalSection = () => {
   }, []);
 
   return (
-    <section className="bg-white font-changa py-16 px-6">
-      <div className="container mx-auto text-center">
-        <h2
-          className="text-2xl md:text-3xl font-bold text-primary mb-12"
-          data-aos="fade-down"
-        >
-          الخدمات
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="bg-primary  rounded-lg shadow-lg p-6 flex flex-col items-center"
-              data-aos="fade-up"
-            >
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-40 object-cover rounded-t-lg mb-4 "
-              />
-              <h3 className="text-lg font-semibold text-white mb-2">
-                {service.title}
-              </h3>
-              <p className="text-sm text-white mb-4 text-center">
-                {service.description}
-              </p>
-              <Link
-                to={service.link}
-                onClick={scrollToTop}
-                className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold py-2 px-4 rounded-full transition-all duration-300"
+    <>
+      <section className="bg-white font-changa py-16 px-6">
+        <div className="container mx-auto text-center">
+          <h2
+            className="text-2xl md:text-3xl font-bold text-primary mb-12"
+            data-aos="fade-down"
+          >
+            الخدمات
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="bg-primary  rounded-lg shadow-lg p-6 flex flex-col items-center"
+                data-aos="fade-up"
               >
-                اقرأ المزيد
-              </Link>
-            </div>
-          ))}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-40 object-cover rounded-t-lg mb-4 "
+                />
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-white mb-4 text-center">
+                  {service.description}
+                </p>
+                <Link
+                  to={service.link}
+                  onClick={scrollToTop}
+                  className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold py-2 px-4 rounded-full transition-all duration-300"
+                >
+                  اقرأ المزيد
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <MedicalInfo />
+    </>
   );
 };
 

@@ -34,7 +34,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-6">
+    <div className="min-h-screen font-changa bg-gray-100 flex items-center justify-center py-12 px-6">
       <div
         className="bg-white shadow-lg rounded-lg w-full max-w-3xl p-8"
         data-aos="fade-up"
