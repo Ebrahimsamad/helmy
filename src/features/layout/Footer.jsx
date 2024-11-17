@@ -118,10 +118,21 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4">خدماتنا</h3>
             <ul className="text-sm md:text-base">
-              <li className="mt-2">الجهاز الهضمي</li>
-              <li className="mt-2">علاج السمنة</li>
-              <li className="mt-2">أمراض الكبد</li>
-              <li className="mt-2">المرارة</li>
+              <li className="mt-2">
+                <Link onClick={scrollToTop} to="/القولون-العصبى">
+                  القولون العصبى
+                </Link>
+              </li>
+              <li className="mt-2">
+                <Link onClick={scrollToTop} to="/علاج-السمنة">
+                  علاج السمنة
+                </Link>
+              </li>
+              <li className="mt-2">
+                <Link onClick={scrollToTop} to="/جرثومة-المعدة">
+                  جرثومة المعدة
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
