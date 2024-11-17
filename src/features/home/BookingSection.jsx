@@ -24,7 +24,7 @@ const BookingSection = () => {
         target="_blank"
         rel="noopener noreferrer"
         data-aos="fade-left"
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition-all duration-300"
+        className="bg-primary hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition-all duration-300"
       >
         احجز الآن
       </a>
