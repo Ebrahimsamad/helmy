@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header = () => {
@@ -12,13 +12,13 @@ const Header = () => {
   return (
     <header className="container font-changa mx-auto flex justify-between items-center py-4 px-4 md:px-0 border-b border-gray-200 bg-white">
       {/* Logo */}
-      <div className="flex items-center space-x-2">
+      <Link to="/" className="flex items-center space-x-2">
         <img
           src="/logo.png" // Replace with the path to your logo
           alt="Logo"
           className="w-20 h-16 object-cover" // Larger logo size
         />
-      </div>
+      </Link>
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex space-x-8 text-lg font-medium text-gray-800">

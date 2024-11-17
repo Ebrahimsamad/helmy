@@ -8,11 +8,14 @@ import PlansPage from "./pages/PlansPage";
 import Medical from "./pages/Medical";
 import Gerthoma from "./features/medical/Gerthoma";
 import VideosPage from "./pages/VideosPage";
+import ScrollToTopButton from "./ui/ScrollToTopButton ";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
     <BrowserRouter>
       <WhatsAppButton />
+      <ScrollToTopButton />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Navigate replace to="/dashboard" />} />
@@ -20,6 +23,7 @@ function App() {
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/about" element={<Medical />} />
           <Route path="/videos" element={<VideosPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/جرثومة-المعدة" element={<Gerthoma />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
