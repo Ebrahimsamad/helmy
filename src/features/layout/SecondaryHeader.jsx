@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaFacebook } from "react-icons/fa"; // Importing other icons
+import { IoLogoSnapchat } from "react-icons/io"; // Importing Snapchat icon
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -54,6 +55,26 @@ const SecondaryHeader = () => {
               className="hover:text-gray-200 transition-colors"
             >
               <FaTiktok className="text-3xl" />
+            </a>
+            {/* Facebook Link */}
+            <a
+              href="https://www.facebook.com/profile.php?id=61555456072613&mibextid=LQQJ4d"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:text-gray-200 transition-colors"
+            >
+              <FaFacebook className="text-3xl" />
+            </a>
+            {/* Snapchat Link */}
+            <a
+              href="https://snapchat.com/t/fNClOieO"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Snapchat"
+              className="hover:text-gray-200 transition-colors"
+            >
+              <IoLogoSnapchat className="text-3xl" />
             </a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { FaYoutube, FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
+import { IoLogoSnapchat } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -76,6 +77,15 @@ const Footer = () => {
                 className="hover:text-gray-300 transition-colors duration-300"
               >
                 <FaFacebook size={28} />
+              </a>
+              <a
+                href="https://snapchat.com/t/fNClOieO"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Snapchat"
+                className="hover:text-gray-200 transition-colors"
+              >
+                <IoLogoSnapchat className="text-3xl" />
               </a>
             </div>
           </div>
