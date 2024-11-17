@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import MedicalInfo from "./MedicalInfo";
+import HealthNews from "./MedicalInfo";
 
 const services = [
   {
@@ -85,7 +86,8 @@ const MedicalSection = () => {
         </div>
       </section>
 
-      <MedicalInfo />
+      <HealthNews />
+      {/* <MedicalInfo /> */}
     </>
   );
 };

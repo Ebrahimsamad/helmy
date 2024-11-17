@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { FaSpinner } from "react-icons/fa";
 
-const MedicalAdviceAndNews = () => {
+const HealthNewsArabic = () => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const medicalAdvices = [
-    "تناول الطعام الصحي المتوازن يوميًا.",
-    "حافظ على شرب 8 أكواب من الماء يوميًا.",
-    "مارس الرياضة بانتظام لتحسين صحة القلب.",
-    "النوم الكافي يحسن صحة الدماغ والجهاز المناعي.",
-    "احرص على غسل يديك بانتظام لتجنب الأمراض المعدية.",
-    "تناول الفواكه والخضروات لدعم جهازك المناعي.",
-    "ابتعد عن التدخين للحفاظ على صحة الرئة.",
-    "افحص صحتك دوريًا للكشف المبكر عن الأمراض.",
+  const healthTips = [
+    "تناول طعامًا متوازنًا يحتوي على الفواكه والخضروات.",
+    "اشرب 8 أكواب من الماء يوميًا لتحافظ على ترطيب جسمك.",
+    "مارس التمارين الرياضية بانتظام للحفاظ على صحة القلب.",
+    "احرص على النوم لمدة 7-8 ساعات يوميًا لتحسين وظائف الجسم.",
+    "اغسل يديك باستمرار لتجنب الإصابة بالأمراض.",
+    "ابتعد عن التدخين للحفاظ على صحة رئتيك.",
+    "قم بالفحوصات الطبية بشكل دوري.",
+    "مارس التأمل واليقظة لتقليل التوتر وتحسين حالتك النفسية.",
   ];
 
   useEffect(() => {
-    const fetchMedicalNews = async () => {
+    const fetchHealthNews = async () => {
       try {
         const response = await fetch(
-          "https://newsapi.org/v2/everything?q=medicine&language=ar&apiKey=25ff2d14add042f8a5b5e1d543f80454"
-        );
-        if (!response.ok) throw new Error("فشل في جلب الأخبار الطبية");
+          `https://gnews.io/api/v4/search?q=الصحة&lang=ar&token=77a39b67f74d6c3c0af6e46af1fbb926`
+        ); // Replace YOUR_API_KEY with your GNews API key
+        if (!response.ok) throw new Error("فشل في جلب الأخبار الصحية.");
         const result = await response.json();
         setNews(result.articles.slice(0, 5)); // Limit to 5 articles
         setLoading(false);
@@ -33,14 +33,14 @@ const MedicalAdviceAndNews = () => {
       }
     };
 
-    fetchMedicalNews();
+    fetchHealthNews();
   }, []);
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen">
-        <FaSpinner className="text-4xl animate-spin text-primary" />
-        <p className="text-xl mt-4">جاري تحميل المعلومات...</p>
+      <div className="flex flex-col justify-center items-center h-screen">
+        <FaSpinner className="text-4xl animate-spin text-blue-500" />
+        <p className="text-xl mt-4">جاري تحميل الأخبار الصحية...</p>
       </div>
     );
   }
@@ -49,7 +49,7 @@ const MedicalAdviceAndNews = () => {
     return (
       <div className="flex flex-col justify-center items-center h-screen text-center">
         <p className="text-red-500 text-xl font-bold">
-          حدث خطأ أثناء تحميل المعلومات.
+          حدث خطأ أثناء تحميل الأخبار.
         </p>
         <p className="text-gray-600">{error}</p>
       </div>
@@ -57,39 +57,39 @@ const MedicalAdviceAndNews = () => {
   }
 
   return (
-    <div className="bg-gray-50 py-10 px-5">
-      <h1 className="text-3xl font-bold text-center text-primary mb-6">
-        نصائح طبية وأخبار حديثة
+    <div className="bg-gray-100 py-10 px-5 text-right">
+      <h1 className="text-3xl font-bold text-center text-blue-700 mb-6">
+        نصائح صحية وآخر الأخبار
       </h1>
 
-      {/* Medical Advices */}
+      {/* Health Tips Section */}
       <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
-        <h2 className="text-2xl font-bold text-secondary mb-4">نصائح طبية</h2>
+        <h2 className="text-2xl font-bold text-green-600 mb-4">نصائح صحية</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2">
-          {medicalAdvices.map((advice, index) => (
+          {healthTips.map((tip, index) => (
             <li key={index} className="text-lg">
-              {advice}
+              {tip}
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Medical News */}
+      {/* Health News Section */}
       <div className="bg-white shadow-lg rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-secondary mb-4">
-          آخر الأخبار الطبية
+        <h2 className="text-2xl font-bold text-blue-600 mb-4">
+          آخر الأخبار الصحية
         </h2>
         <ul className="space-y-4">
           {news.map((article, index) => (
             <li
               key={index}
-              className="p-4 border-b border-gray-200 last:border-0 hover:bg-gray-100 transition"
+              className="p-4 border-b border-gray-200 last:border-0 hover:bg-gray-50 transition"
             >
               <a
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-bold text-primary hover:underline"
+                className="text-lg font-bold text-blue-700 hover:underline"
               >
                 {article.title}
               </a>
@@ -105,4 +105,4 @@ const MedicalAdviceAndNews = () => {
   );
 };
 
-export default MedicalAdviceAndNews;
+export default HealthNewsArabic;
