@@ -10,7 +10,7 @@ const ContactUs = () => {
     message: "",
   });
 
-  const whatsappNumber = "201552211942";
+  const whatsappNumber = "971504233692";
 
   useEffect(() => {
     AOS.init({ duration: 1000 });

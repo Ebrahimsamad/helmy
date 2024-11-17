@@ -84,7 +84,7 @@ const PlansSection = () => {
             {/* Button */}
             <div className="px-6 pb-6 text-center">
               <button className="w-full bg-primary text-white py-3 rounded-lg shadow-md hover:bg-[#20484a] transition">
-                <a href="https://wa.me/201552211942" target="_blank">
+                <a href="https://wa.me/971504233692" target="_blank">
                   سجل الآن
                 </a>
               </button>

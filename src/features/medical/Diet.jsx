@@ -90,7 +90,7 @@ function Diet() {
           </ul>
 
           <a
-            href="https://wa.me/201552211942"
+            href="https://wa.me/971504233692"
             target="_blank"
             className="text-primary hover:text-blue-700 transition-colors duration-300"
             data-aos="fade-up"

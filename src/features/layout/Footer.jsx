@@ -32,13 +32,22 @@ const Footer = () => {
             <p className="text-sm md:text-base">
               دبي , الامارات العربية المتحدة
             </p>
-            <p className="mt-2 text-sm md:text-base">ebrahim7asn@gmail.com</p>
+            <p className="mt-2 text-sm md:text-base">
+              <a
+                href="mailto:dr.helmy1010@gmail.com"
+                className=" hover:underline"
+              >
+                dr.helmy1010@gmail.com
+              </a>
+            </p>
             <a
-              href="https://wa.me/201552211942"
+              href="https://wa.me/971504233692"
               target="_blank"
               rel="noreferrer"
             >
-              <p className="mt-2 text-sm md:text-base">01552211942</p>
+              <p className="mt-2 hover:underline text-sm md:text-base">
+                971504233692+
+              </p>
             </a>
             <div className="flex justify-center md:justify-end gap-6 mt-6">
               <a

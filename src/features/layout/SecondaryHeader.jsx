@@ -7,7 +7,7 @@ const SecondaryHeader = () => {
         <div className="flex items-center justify-between flex-wrap">
           {/* Button Section */}
           <button className="p-3 bg-white text-primary rounded-lg mb-4 md:mb-0">
-            <a target="_blank" href="https://wa.me/201552211942">
+            <a target="_blank" href="https://wa.me/971504233692">
               احجز الان
             </a>
           </button>

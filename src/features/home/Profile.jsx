@@ -54,7 +54,7 @@ const DoctorProfile = () => {
           {/* Buttons */}
           <div className="flex flex-wrap justify-center lg:justify-end space-x-1 lg:space-x-reverse gap-3">
             <button className="bg-white text-blue-900 font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-gray-100 transition-transform transform hover:scale-105">
-              <a href="https://wa.me/201552211942" target="_blank">
+              <a href="https://wa.me/971504233692" target="_blank">
                 احجز الآن
               </a>
             </button>

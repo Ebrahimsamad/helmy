@@ -20,7 +20,7 @@ const BookingSection = () => {
         هل تبحث عن طبيب مثالي؟
       </h2>
       <a
-        href="https://wa.me/201552211942"
+        href="https://wa.me/971504233692"
         target="_blank"
         rel="noopener noreferrer"
         data-aos="fade-left"
