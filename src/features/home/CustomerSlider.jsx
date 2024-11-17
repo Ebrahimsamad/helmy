@@ -18,16 +18,16 @@ const images = [
 ];
 
 const CustomerSlider = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
-  const openModal = (image) => {
-    setSelectedImage(image);
-    document.body.style.overflow = "hidden"; // Disable scroll when modal is open
+  const openModal = (index) => {
+    setSelectedImageIndex(index);
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = "auto"; // Re-enable scroll when modal is closed
+    setSelectedImageIndex(null);
+    document.body.style.overflow = "auto";
   };
 
   const handleOverlayClick = (e) => {
@@ -38,7 +38,7 @@ const CustomerSlider = () => {
 
   const PrevArrow = ({ onClick }) => (
     <button
-      className="absolute top-1/2 left-2 transform -translate-y-1/2 z-10 text-primary text-2xl bg-white rounded-full p-2 shadow-lg hover:bg-primary hover:text-white transition-all"
+      className="absolute top-1/2 left-2 transform -translate-y-1/2 z-10 text-white bg-primary rounded-full p-3 shadow-lg hover:scale-110 transition-transform"
       onClick={onClick}
       aria-label="Previous Slide"
     >
@@ -48,7 +48,7 @@ const CustomerSlider = () => {
 
   const NextArrow = ({ onClick }) => (
     <button
-      className="absolute top-1/2 right-2 transform -translate-y-1/2 z-10 text-primary text-2xl bg-white rounded-full p-2 shadow-lg hover:bg-primary hover:text-white transition-all"
+      className="absolute top-1/2 right-2 transform -translate-y-1/2 z-10 text-white bg-primary rounded-full p-3 shadow-lg hover:scale-110 transition-transform"
       onClick={onClick}
       aria-label="Next Slide"
     >
@@ -87,9 +87,21 @@ const CustomerSlider = () => {
     []
   );
 
+  const navigateImage = (direction) => {
+    if (direction === "next") {
+      setSelectedImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    } else {
+      setSelectedImageIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+    }
+  };
+
   return (
     <div className="bg-gray-100 py-12 px-4">
-      <h2 className="text-3xl font-changa font-bold  text-center text-primary mb-8">
+      <h2 className="text-3xl font-changa font-bold text-center text-primary mb-8">
         آراء بعض العملاء
       </h2>
       <div className="max-w-5xl mx-auto">
@@ -97,53 +109,61 @@ const CustomerSlider = () => {
           {images.map((image, index) => (
             <div
               key={index}
-              className="cursor-pointer transition-transform transform hover:scale-105 px-2"
-              onClick={() => openModal(image)}
+              className="cursor-pointer px-2"
+              onClick={() => openModal(index)}
               role="button"
               tabIndex={0}
               aria-label={`View Customer Image ${index + 1}`}
-              onKeyPress={(e) => e.key === "Enter" && openModal(image)}
+              onKeyPress={(e) => e.key === "Enter" && openModal(index)}
             >
-              <div className="w-full h-64 relative overflow-hidden rounded-lg shadow-md hover:shadow-xl">
+              <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-transform transform hover:scale-105">
                 <img
                   src={image}
                   alt={`Customer Image ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform transform hover:scale-110"
+                  className="w-full h-64 object-cover transition-transform transform hover:scale-110"
                   loading="lazy"
                   onError={(e) => {
                     e.target.src = "/fallback.jpg";
                   }}
                 />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent text-white text-lg opacity-0 hover:opacity-100 transition-opacity">
-                  Customer Image {index + 1}
-                </div>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-      {/* Fullscreen Modal */}
-      {selectedImage && (
+      {selectedImageIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 transition-opacity duration-300"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
           onClick={handleOverlayClick}
           role="presentation"
         >
-          <div className="relative max-w-3xl w-full p-4 bg-white rounded-lg shadow-lg">
-            <div className="relative">
-              <button
-                className="absolute -top-3 z-40 -right-3 text-black text-3xl hover:text-primary transition-colors p-2 rounded-full"
-                onClick={closeModal}
-                aria-label="Close image"
-              >
-                <AiOutlineClose />
-              </button>
-              <img
-                src={selectedImage}
-                alt="Selected"
-                className="w-full max-h-[80vh] object-contain transition-transform transform scale-100 rounded-lg"
-              />
-            </div>
+          <div className="relative max-w-4xl w-full p-4">
+            <button
+              className="absolute -top-4 -right-4 text-gray-300 text-3xl hover:text-primary transition-colors p-2"
+              onClick={closeModal}
+              aria-label="Close image"
+            >
+              <AiOutlineClose />
+            </button>
+            <button
+              className="absolute top-1/2 -left-0 transform -translate-y-1/2 text-white bg-primary rounded-full p-3 shadow-lg hover:scale-110 transition-transform"
+              onClick={() => navigateImage("prev")}
+              aria-label="Previous Image"
+            >
+              <AiOutlineLeft />
+            </button>
+            <img
+              src={images[selectedImageIndex]}
+              alt={`Selected Customer ${selectedImageIndex + 1}`}
+              className="w-full max-h-[80vh] object-contain rounded-lg"
+            />
+            <button
+              className="absolute top-1/2 -right-0 transform -translate-y-1/2 text-white bg-primary rounded-full p-3 shadow-lg hover:scale-110 transition-transform"
+              onClick={() => navigateImage("next")}
+              aria-label="Next Image"
+            >
+              <AiOutlineRight />
+            </button>
           </div>
         </div>
       )}
