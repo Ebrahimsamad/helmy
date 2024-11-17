@@ -10,6 +10,8 @@ import Gerthoma from "./features/medical/Gerthoma";
 import VideosPage from "./pages/VideosPage";
 import ScrollToTopButton from "./ui/ScrollToTopButton ";
 import ContactPage from "./pages/ContactPage";
+import Diet from "./features/medical/Diet";
+import Asaby from "./features/medical/Asaby";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/videos" element={<VideosPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/جرثومة-المعدة" element={<Gerthoma />} />
+          <Route path="/علاج-السمنة" element={<Diet />} />
+          <Route path="/القولون-العصبى" element={<Asaby />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <header className="container font-changa mx-auto flex justify-between items-center py-4 px-4 md:px-0 border-b border-gray-200 bg-white">
+    <header className="container font-changa mx-auto flex justify-between items-center py-4 px-4 md:px-0 border-b border-gray-200 bg-white relative">
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
         <img
@@ -29,7 +29,6 @@ const Header = () => {
         >
           الرئيسية
         </NavLink>
-        <span />
         <NavLink
           to="/plans"
           className="hover:text-primary px-4 py-2"
@@ -38,18 +37,18 @@ const Header = () => {
           خدمات الدكتور
         </NavLink>
         <NavLink
-          to="/about"
-          className="hover:text-primary px-4 py-2"
-          activeClassName="text-primary border-b-2 border-primary"
-        >
-          معلومات طبية
-        </NavLink>
-        <NavLink
           to="/videos"
           className="hover:text-primary px-4 py-2"
           activeClassName="text-primary border-b-2 border-primary"
         >
           فيديوهات
+        </NavLink>
+        <NavLink
+          to="/about"
+          className="hover:text-primary px-4 py-2"
+          activeClassName="text-primary border-b-2 border-primary"
+        >
+          معلومات طبية
         </NavLink>
         <NavLink
           to="/contact"
@@ -73,9 +72,9 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <nav className="absolute z-50 top-16 left-0 w-full bg-white shadow-md flex flex-col items-center py-4 space-y-4 md:hidden">
+        <nav className="absolute z-50 top-16 left-0 w-full bg-white shadow-md flex flex-col items-center py-4 space-y-4 md:hidden transition-all duration-300 ease-in-out">
           <NavLink
-            to="/"
+            to="/dashboard"
             className="hover:text-primary px-4 py-2"
             activeClassName="text-primary border-b-2 border-primary"
             onClick={toggleMenu}
@@ -91,20 +90,20 @@ const Header = () => {
             خدمات الدكتور
           </NavLink>
           <NavLink
-            to="/about"
-            className="hover:text-primary px-4 py-2"
-            activeClassName="text-primary border-b-2 border-primary"
-            onClick={toggleMenu}
-          >
-            معلومات طبية
-          </NavLink>
-          <NavLink
             to="/videos"
             className="hover:text-primary px-4 py-2"
             activeClassName="text-primary border-b-2 border-primary"
             onClick={toggleMenu}
           >
             فيديوهات
+          </NavLink>
+          <NavLink
+            to="/about"
+            className="hover:text-primary px-4 py-2"
+            activeClassName="text-primary border-b-2 border-primary"
+            onClick={toggleMenu}
+          >
+            معلومات طبية
           </NavLink>
           <NavLink
             to="/contact"
