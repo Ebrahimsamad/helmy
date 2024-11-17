@@ -45,6 +45,11 @@ const TiktokGallery = () => {
   const videos = [
     {
       title: "الفيديو 1: الحكة المستمرة تشير إلى مشاكل في الكبد",
+      thumbnail: "/videos/45.png",
+      url: "https://www.tiktok.com/@dr.helmy10/video/7437538797312675094",
+    },
+    {
+      title: "الفيديو 1: الحكة المستمرة تشير إلى مشاكل في الكبد",
       thumbnail: "/videos/2.png",
       url: "https://www.tiktok.com/@dr.helmy10/video/7426449707649584417",
     },
@@ -88,6 +93,16 @@ const TiktokGallery = () => {
       thumbnail: "/videos/9.png",
       url: "https://www.tiktok.com/@dr.helmy10/video/7437459442855054614",
     },
+    {
+      title: "الفيديو 9: زيت الخروع نسف العقد والاكياس",
+      thumbnail: "/videos/12.png",
+      url: "https://www.tiktok.com/@dr.helmy10/video/7437633117491399958",
+    },
+    {
+      title: "الفيديو 9: زيت الخروع نسف العقد والاكياس",
+      thumbnail: "/videos/10.png",
+      url: "https://www.tiktok.com/@dr.helmy10/video/7438354696638582038",
+    },
   ];
 
   return (
@@ -95,7 +110,7 @@ const TiktokGallery = () => {
       <h2 className="text-3xl font-changa font-semibold text-primary mb-6 text-center">
         بعض من فيديوهاتنا على قناتنا على التيك توك
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
         {videos.map((video, index) => (
           <div
             key={index}

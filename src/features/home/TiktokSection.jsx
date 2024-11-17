@@ -84,6 +84,11 @@ const TiktokSection = () => {
   const videos = [
     {
       title: "الفيديو 1: الحكة المستمرة تشير إلى مشاكل في الكبد",
+      thumbnail: "/videos/45.png",
+      url: "https://www.tiktok.com/@dr.helmy10/video/7437538797312675094",
+    },
+    {
+      title: "الفيديو 1: الحكة المستمرة تشير إلى مشاكل في الكبد",
       thumbnail: "/videos/2.png",
       url: "https://www.tiktok.com/@dr.helmy10/video/7426449707649584417",
     },
@@ -105,7 +110,7 @@ const TiktokSection = () => {
         <h2 className="text-3xl font-changa font-semibold text-primary text-center mb-6">
           استمتع ببعض فيديوهاتنا على التيك توك
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {videos.map((video, index) => (
             <div
               key={index}
