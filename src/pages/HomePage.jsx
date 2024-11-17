@@ -4,6 +4,7 @@ import CustomerSlider from "../features/home/CustomerSlider";
 import MapSection from "../features/home/MapSection";
 import DoctorProfile from "../features/home/Profile";
 import ServicesSection from "../features/home/ServicesSection";
+import TiktokSection from "../features/home/TiktokSection";
 import WhyChooseUs from "../features/home/WhyChooseUs";
 
 function HomePage() {
@@ -12,6 +13,7 @@ function HomePage() {
       <DoctorProfile />
       <WhyChooseUs />
       <BookingSection />
+      <TiktokSection />
       <ServicesSection />
       <CustomerSlider />
       <AppointmentSection />
