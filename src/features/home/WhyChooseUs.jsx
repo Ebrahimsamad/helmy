@@ -21,13 +21,19 @@ const WhyChooseUs = () => {
   }, []);
 
   const features = [
-    { icon: <MdOutlinePrivacyTip />, text: "الخصوصية الطبية" },
+    {
+      // icon: <MdOutlinePrivacyTip />,
+      text: "طبيب مؤهل ومتميز وعلى قدر كبير من العلم والمعرفة الطبية ",
+    },
     // { icon: <AiOutlineTool />, text: "أحدث المعدات" },
     // { icon: <FaShieldAlt />, text: "الجودة والسلامة" },
-    { icon: <FaMapMarkerAlt />, text: "الموقع المميز" },
+    { icon: <FaMapMarkerAlt />, text: "يراعى خصوصيتك " },
     // { icon: <FaHeartbeat />, text: "رعاية المرضى" },
-    { icon: <FaUserMd />, text: "طبيب مؤهل" },
-    { icon: <FaShieldAlt />, text: "خطة العلاج الشخصية" },
+    {
+      // icon: <FaUserMd />,
+      text: "يقوم بعمل خطة علاجية فعالة وله العديد من النتائج الرائعة ",
+    },
+    // { icon: <FaShieldAlt />, text: "خطة العلاج الشخصية" },
     // { icon: <AiOutlineExclamationCircle />, text: "مساعدة الطوارئ" },
   ];
 
@@ -39,7 +45,7 @@ const WhyChooseUs = () => {
         </h2>
         <hr className="mx-auto  border-t-2  border-primary mb-8" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
@@ -47,7 +53,7 @@ const WhyChooseUs = () => {
               data-aos="fade-up"
               data-aos-delay={index * 100} // Adding staggered delay for animations
             >
-              <div className="text-5xl text-primary mb-4">{feature.icon}</div>
+              {/* <div className="text-5xl text-primary mb-4">{feature.icon}</div> */}
               <p className="text-lg font-medium">{feature.text}</p>
             </div>
           ))}
