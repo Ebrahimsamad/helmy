@@ -82,7 +82,6 @@ const Header = () => {
           >
             الرئيسية
           </NavLink>
-          <span />
           <NavLink
             to="/plans"
             className="hover:text-primary px-4 py-2"
