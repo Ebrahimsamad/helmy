@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaYoutube, FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 import { IoLogoSnapchat } from "react-icons/io";
 import { Link } from "react-router-dom";
+import PrivacyPolicyModal from "./PrivacyPolicyModal";
 
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -171,8 +173,21 @@ const Footer = () => {
             </a>{" "}
             | All rights reserved © Dr-Helmy
           </p>
+
+          <p className="text-sm md:text-base mb-5">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="text-sm md:text-base mt-4 bg-red-900 hover:bg-red-700 text-white py-2 px-4 rounded-md transition"
+            >
+              سياسة الخصوصية
+            </button>
+          </p>
         </div>
       </div>
+
+      {isModalOpen && (
+        <PrivacyPolicyModal onClose={() => setIsModalOpen(false)} />
+      )}
     </footer>
   );
 };
